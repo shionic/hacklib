@@ -4,26 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd9310ca-b098-496f-a938-410652c09219" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/shionic/hacklib/HackClassLoaderHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/shionic/hacklib/HackLookupHolder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/shionic/hacklib/HackModuleHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/shionic/hacklib/impl/HackLookupByReflection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/shionic/hacklib/impl/HackLookupByUnsafe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/github/shionic/hacklib/tests/BasicTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/module-info.java" afterDir="false" />
+    <list default="true" id="fd9310ca-b098-496f-a938-410652c09219" name="Changes" comment="First commit">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/shionic/hacklib/HackClassLoaderHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/shionic/hacklib/HackClassLoaderHelper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,29 +50,30 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2lhzwpg13wYAkV93DYAZx9ta9PC" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.BasicTests.executor": "Run",
-    "Gradle.BasicTests.getAllUnnamedModule.executor": "Run",
-    "Gradle.BasicTests.getBaseModuleController.executor": "Run",
-    "Gradle.BasicTests.getBootstrapClassOrNull.executor": "Run",
-    "Gradle.BasicTests.getLookup.executor": "Run",
-    "Gradle.BasicTests.myTest (1).executor": "Run",
-    "Gradle.BasicTests.myTest.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.BasicTests.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BasicTests.getAllUnnamedModule.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BasicTests.getBaseModuleController.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BasicTests.getBootstrapClassOrNull.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BasicTests.getLookup.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BasicTests.myTest (1).executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BasicTests.myTest.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java" />
@@ -235,6 +220,19 @@
       <option name="presentableId" value="Default" />
       <updated>1725647339019</updated>
     </task>
+    <task id="LOCAL-00001" summary="First commit">
+      <option name="closed" value="true" />
+      <created>1725651742817</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1725651742817</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="First commit" />
   </component>
 </project>
