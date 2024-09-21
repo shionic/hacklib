@@ -6,9 +6,10 @@ import java.lang.reflect.Constructor;
 import java.util.*;
 
 public class SimpleDIContainer {
-    private final Map<Class<?>, ObjectDefinition> definitionMap = new HashMap<>();
+    private final Map<Class<?>, List<ObjectDefinition>> definitionMap = new HashMap<>();
     private final Map<Class<?>, List<Object>> objectMap = new HashMap<>();
     private final List<ObjectPostProcessor> postProcessors = new ArrayList<>();
+    private final boolean automaticRegisterClasses;
     private <T> ObjectDefinition makeDefinition(Class<T> clazz) {
         Constructor<?> constructor = null;
         for (Constructor<?> c : clazz.getDeclaredConstructors()) {
@@ -32,14 +33,48 @@ public class SimpleDIContainer {
     }
 
     public SimpleDIContainer() {
+        this.automaticRegisterClasses = true;
+    }
+
+    public SimpleDIContainer(boolean automaticRegisterClasses) {
+        this.automaticRegisterClasses = automaticRegisterClasses;
     }
 
     public SimpleDIContainer(List<ObjectPostProcessor> postProcessors) {
         this.postProcessors.addAll(postProcessors);
+        this.automaticRegisterClasses = true;
+    }
+
+    public SimpleDIContainer(List<ObjectPostProcessor> postProcessors, boolean automaticRegisterClasses) {
+        this.postProcessors.addAll(postProcessors);
+        this.automaticRegisterClasses = automaticRegisterClasses;
     }
 
     public void addPostProcessor(ObjectPostProcessor postProcessor) {
         postProcessors.add(postProcessor);
+    }
+
+    public ObjectDefinition register(Class<?> clazz) {
+        var list = definitionMap.get(clazz);
+        var def = getObjectFromList(list, clazz);
+        def = makeDefinition(clazz);
+        registerDefinition(clazz, def);
+        return def;
+    }
+    private void registerDefinition(Class<?> clazz, ObjectDefinition def) {
+        var list = definitionMap.computeIfAbsent(clazz, x -> new ArrayList<>(1));
+        list.add(def);
+        for(var i : clazz.getInterfaces()) {
+            registerDefinition(i, def);
+        }
+        Class<?> superclass = clazz.getSuperclass();
+        if(superclass != null && superclass != Object.class) {
+            registerDefinition(superclass, def);
+        }
+    }
+    public ObjectDefinition getDefinition(Class<?> clazz) {
+        var list = definitionMap.get(clazz);
+        return getObjectFromList(list, clazz);
     }
 
     @SuppressWarnings("unchecked")
@@ -67,7 +102,7 @@ public class SimpleDIContainer {
         return result;
     }
     
-    private Object getObjectFromList(List<Object> list, Class<?> clazz) {
+    private<T> T getObjectFromList(List<T> list, Class<?> clazz) {
         if(list != null && !list.isEmpty()) {
             if(list.size() == 1) {
                 return list.getFirst();
@@ -96,14 +131,21 @@ public class SimpleDIContainer {
         if(obj != null) {
             return obj;
         }
-        var def = definitionMap.computeIfAbsent(clazz, this::makeDefinition);
+        var def = getDefinition(clazz);
+        if(def == null) {
+            if(!clazz.isInterface() && automaticRegisterClasses) {
+                def = register(clazz);
+            } else {
+                throw new RuntimeException(String.format("Can't create %s", clazz.getName()));
+            }
+        }
         List<Object> objects = new ArrayList<>(def.dependencies().size());
         for(var e : def.dependencies()) {
             objects.add(getInstance(e));
         }
         obj = (T) HackReflectionHelper.newInstance(def.constructor(), objects);
         for(var e : postProcessors) {
-            e.postProcess(clazz, obj, def);
+            e.postProcess(this, clazz, obj, def);
         }
         putObjectToMap(clazz, obj);
         return obj;
@@ -114,6 +156,6 @@ public class SimpleDIContainer {
     }
 
     public interface ObjectPostProcessor {
-        void postProcess(Class<?> clazz, Object obj, ObjectDefinition definition);
+        void postProcess(SimpleDIContainer container, Class<?> clazz, Object obj, ObjectDefinition definition);
     }
 }

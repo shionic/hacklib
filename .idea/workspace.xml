@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd9310ca-b098-496f-a938-410652c09219" name="Changes" comment="HackReflectionHelper">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/shionic/hacklib/di/SimpleAutoinject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/shionic/hacklib/di/SimpleDIContainer.java" afterDir="false" />
+    <list default="true" id="fd9310ca-b098-496f-a938-410652c09219" name="Changes" comment="SimpleDIContainer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/shionic/hacklib/HackReflectionHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/shionic/hacklib/HackReflectionHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/shionic/hacklib/tests/BasicTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/shionic/hacklib/tests/BasicTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/shionic/hacklib/di/SimpleDIContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/shionic/hacklib/di/SimpleDIContainer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,7 +260,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726946133283</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="SimpleDIContainer">
+      <option name="closed" value="true" />
+      <created>1726952720805</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1726952720805</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -272,6 +276,7 @@
     <MESSAGE value="Add defineClass/definePackage" />
     <MESSAGE value="Support native library" />
     <MESSAGE value="HackReflectionHelper" />
-    <option name="LAST_COMMIT_MESSAGE" value="HackReflectionHelper" />
+    <MESSAGE value="SimpleDIContainer" />
+    <option name="LAST_COMMIT_MESSAGE" value="SimpleDIContainer" />
   </component>
 </project>
