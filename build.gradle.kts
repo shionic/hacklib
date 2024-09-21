@@ -5,6 +5,12 @@ plugins {
 group = "org.example"
 version = "1.0-SNAPSHOT"
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
 repositories {
     mavenCentral()
 }
@@ -15,5 +21,7 @@ dependencies {
 }
 
 tasks.test {
+    dependsOn(":native-library:linkDebug")
+    systemProperty("java.library.path", file("${project(":native-library").buildDir}/lib/main/debug").absolutePath)
     useJUnitPlatform()
 }
