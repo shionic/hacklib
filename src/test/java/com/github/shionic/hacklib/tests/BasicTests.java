@@ -3,8 +3,11 @@ package com.github.shionic.hacklib.tests;
 import com.github.shionic.hacklib.HackClassLoaderHelper;
 import com.github.shionic.hacklib.HackLookupHolder;
 import com.github.shionic.hacklib.HackModuleHelper;
+import com.github.shionic.hacklib.HackReflectionHelper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import java.io.IOException;
 
 public class BasicTests {
     @Test
@@ -34,8 +37,6 @@ public class BasicTests {
     }
 
     @Test
-    public void myTest() {
-        var module = HackClassLoaderHelper.class.getModule();
-        HackClassLoaderHelper.addUrlToSystemClassLoader(null);
+    public void myTest() throws IOException {
     }
 }

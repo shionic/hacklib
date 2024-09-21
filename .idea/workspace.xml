@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd9310ca-b098-496f-a938-410652c09219" name="Changes" comment="Support native library">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/shionic/hacklib/HackReflectionHelper.java" afterDir="false" />
+    <list default="true" id="fd9310ca-b098-496f-a938-410652c09219" name="Changes" comment="HackReflectionHelper">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/shionic/hacklib/di/SimpleAutoinject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/shionic/hacklib/di/SimpleDIContainer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/shionic/hacklib/HackReflectionHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/shionic/hacklib/HackReflectionHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/shionic/hacklib/tests/BasicTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/github/shionic/hacklib/tests/BasicTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +47,7 @@
       <list>
         <option value="module-info" />
         <option value="Class" />
+        <option value="AnnotationType" />
       </list>
     </option>
   </component>
@@ -251,13 +256,22 @@
       <option name="project" value="LOCAL" />
       <updated>1726944249326</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="HackReflectionHelper">
+      <option name="closed" value="true" />
+      <created>1726946133283</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1726946133283</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit" />
     <MESSAGE value="Add defineClass/definePackage" />
     <MESSAGE value="Support native library" />
-    <option name="LAST_COMMIT_MESSAGE" value="Support native library" />
+    <MESSAGE value="HackReflectionHelper" />
+    <option name="LAST_COMMIT_MESSAGE" value="HackReflectionHelper" />
   </component>
 </project>

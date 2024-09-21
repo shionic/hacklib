@@ -4,7 +4,6 @@ import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodType;
 import java.lang.reflect.AccessibleObject;
 import java.lang.reflect.Constructor;
-import java.lang.reflect.Field;
 
 public class HackReflectionHelper {
     private static final MethodHandle METHOD_SET_ACCESSIBLE0;
