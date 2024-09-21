@@ -145,7 +145,7 @@ public class SimpleDIContainer {
         }
         obj = (T) HackReflectionHelper.newInstance(def.constructor(), objects);
         for(var e : postProcessors) {
-            e.postProcess(this, clazz, obj, def);
+            obj = (T) e.postProcess(this, clazz, obj, def);
         }
         putObjectToMap(clazz, obj);
         return obj;
@@ -156,6 +156,6 @@ public class SimpleDIContainer {
     }
 
     public interface ObjectPostProcessor {
-        void postProcess(SimpleDIContainer container, Class<?> clazz, Object obj, ObjectDefinition definition);
+        Object postProcess(SimpleDIContainer container, Class<?> clazz, Object obj, ObjectDefinition definition);
     }
 }
