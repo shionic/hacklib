@@ -1,5 +1,7 @@
 package com.github.shionic.hacklib;
 
+import lombok.SneakyThrows;
+
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodType;
 import java.lang.invoke.VarHandle;
@@ -39,13 +41,10 @@ public class HackClassLoaderHelper {
         }
     }
 
+    @SneakyThrows
     public static void addUrlToBuildinClassLoader(ClassLoader classLoader, URL url) {
         var ucp = GET_UCP_FROM_CLASSLOADER.get(classLoader);
-        try {
-            ADD_URL_TO_UCP.invoke(ucp, url);
-        } catch (Throwable e) {
-            throw new RuntimeException(e);
-        }
+        ADD_URL_TO_UCP.invoke(ucp, url);
     }
 
     public static void addUrlToSystemClassLoader(URL url) {
@@ -56,20 +55,14 @@ public class HackClassLoaderHelper {
         addUrlToBuildinClassLoader(PLATFORM_CLASS_LOADER, url);
     }
 
+    @SneakyThrows
     public static Class<?> findBootstrapClassOrNull(String name) {
-        try {
-            return (Class<?>) FIND_BOOTSTRAP_CLASS_OR_NULL.invoke(name);
-        } catch (Throwable e) {
-            throw new RuntimeException(e);
-        }
+        return (Class<?>) FIND_BOOTSTRAP_CLASS_OR_NULL.invoke(name);
     }
 
+    @SneakyThrows
     public static Class<?> defineClass(ClassLoader classLoader, String name, byte[] bytes, int offset, int length, ProtectionDomain domain) {
-        try {
-            return (Class<?>) DEFINE_CLASS.invoke(classLoader, name, bytes, offset, length, domain);
-        } catch (Throwable e) {
-            throw new RuntimeException(e);
-        }
+        return (Class<?>) DEFINE_CLASS.invoke(classLoader, name, bytes, offset, length, domain);
     }
 
     public static Class<?> defineClass(ClassLoader classLoader, String name, byte[] bytes, int offset, int length) {
@@ -80,11 +73,8 @@ public class HackClassLoaderHelper {
         return defineClass(classLoader, name, bytes, 0, bytes.length, null);
     }
 
+    @SneakyThrows
     public static Package definePackage(ClassLoader classLoader, String name, Module module) {
-        try {
-            return (Package) DEFINE_PACKAGE.invoke(classLoader, name, module);
-        } catch (Throwable e) {
-            throw new RuntimeException(e);
-        }
+        return (Package) DEFINE_PACKAGE.invoke(classLoader, name, module);
     }
 }

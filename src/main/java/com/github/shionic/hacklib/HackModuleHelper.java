@@ -1,5 +1,7 @@
 package com.github.shionic.hacklib;
 
+import lombok.SneakyThrows;
+
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodType;
 
@@ -18,12 +20,9 @@ public class HackModuleHelper {
             throw new RuntimeException(e);
         }
     }
+    @SneakyThrows
     public static ModuleLayer.Controller getController(ModuleLayer layer) {
-        try {
-            return (ModuleLayer.Controller) MODULE_CONTROLLER_CONSTRUCTOR.invoke(layer);
-        } catch (Throwable e) {
-            throw new RuntimeException(e);
-        }
+        return (ModuleLayer.Controller) MODULE_CONTROLLER_CONSTRUCTOR.invoke(layer);
     }
 
     public static Module getAllUnnamedModule() {
