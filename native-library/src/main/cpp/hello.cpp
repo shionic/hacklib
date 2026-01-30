@@ -7,7 +7,7 @@ jint JNI_OnLoad(JavaVM *vm, void *reserved);
 }
 
 jint JNI_OnLoad(JavaVM *vm, void *reserved) {
-    printf("Library loaded\n");
+    //printf("Library loaded\n");
     return JNI_VERSION_1_8;
 }
 

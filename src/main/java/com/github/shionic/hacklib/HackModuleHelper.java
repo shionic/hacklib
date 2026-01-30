@@ -8,6 +8,7 @@ import java.lang.invoke.MethodType;
 public class HackModuleHelper {
     private static final MethodHandle MODULE_CONTROLLER_CONSTRUCTOR;
     public static final Module ALL_UNNAMED_MODULE;
+    public static final Module EVERYONE_MODULE;
     static {
         try {
             MODULE_CONTROLLER_CONSTRUCTOR = HackLookupHolder.getLookup().findConstructor(ModuleLayer.Controller.class, MethodType.methodType(void.class, ModuleLayer.class));
@@ -19,6 +20,13 @@ public class HackModuleHelper {
         } catch (NoSuchFieldException | IllegalAccessException e) {
             throw new RuntimeException(e);
         }
+        Module everyoneModule;
+        try {
+            everyoneModule = (Module) HackLookupHolder.getLookup().findStaticVarHandle(Module.class, "EVERYONE_MODULE", Module.class).get();
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            everyoneModule = null;
+        }
+        EVERYONE_MODULE = everyoneModule;
     }
     @SneakyThrows
     public static ModuleLayer.Controller getController(ModuleLayer layer) {
@@ -27,5 +35,9 @@ public class HackModuleHelper {
 
     public static Module getAllUnnamedModule() {
         return ALL_UNNAMED_MODULE;
+    }
+
+    public static Module getEveryoneModule() {
+        return EVERYONE_MODULE;
     }
 }

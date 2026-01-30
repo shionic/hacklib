@@ -23,6 +23,12 @@ public class BasicTests {
     }
 
     @Test
+    public void getEveryoneModule() {
+        var module = HackModuleHelper.getEveryoneModule();
+        Assertions.assertNotNull(module);
+    }
+
+    @Test
     public void getBaseModuleController() {
         var layer = String.class.getModule().getLayer();
         var controller = HackModuleHelper.getController(layer);
